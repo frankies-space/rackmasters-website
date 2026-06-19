@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;900&display=swap");
+@import "tailwindcss";
+
+/* ============================================================
+   RACKMASTERS — COMIC BOOK DESIGN SYSTEM
+   Inspired by classic pop-art comic panels
+   ============================================================ */
+
+@theme {
+  /* Brand Colors */
+  --color-rm-yellow:    #FFD600;
+  --color-rm-yellow-light: #FFED80;
+  --color-rm-red:       #E8232A;
+  --color-rm-red-dark:  #B5181E;
+  --color-rm-blue:      #1B3FBE;
+  --color-rm-blue-dark: #0E2280;
+  --color-rm-blue-light: #4A6FE3;
+  --color-rm-black:     #0A0A0A;
+  --color-rm-white:     #FAFAFA;
+  --color-rm-offwhite:  #F5F3ED;
+  --color-rm-gray:      #4A4A4A;
+  --color-rm-gray-light:#D0CEC7;
+
+  /* Semantic tokens */
+  --color-background:   #FAFAFA;
+  --color-foreground:   #0A0A0A;
+  --color-primary:      #FFD600;
+  --color-primary-foreground: #0A0A0A;
+  --color-secondary:    #1B3FBE;
+  --color-secondary-foreground: #FAFAFA;
+  --color-accent:       #E8232A;
+  --color-accent-foreground: #FAFAFA;
+  --color-muted:        #F5F3ED;
+  --color-muted-foreground: #4A4A4A;
+  --color-border:       #0A0A0A;
+  --color-ring:         #FFD600;
+
+  /* Typography */
+  --font-comic:         'Bangers', 'Impact', cursive;
+  --font-sans:          'Inter', system-ui, sans-serif;
+
+  /* Spacing scale */
+  --spacing-panel: 1.5rem;
+
+  /* Borders */
+  --border-comic:       3px solid #0A0A0A;
+  --border-comic-thick: 5px solid #0A0A0A;
+
+  /* Shadows — offset black for comic panel depth */
+  --shadow-panel:  4px 4px 0px #0A0A0A;
+  --shadow-panel-lg: 6px 6px 0px #0A0A0A;
+  --shadow-panel-xl: 8px 8px 0px #0A0A0A;
+  --shadow-hero:   12px 12px 0px #0A0A0A;
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================================================
+   HALFTONE PATTERN UTILITY
+   ============================================================ */
+
+.halftone {
+  background-image: radial-gradient(circle, #0A0A0A 1.5px, transparent 1.5px);
+  background-size: 10px 10px;
+  background-color: transparent;
+}
+
+.halftone-yellow {
+  background-image: radial-gradient(circle, #FFD600 1.5px, transparent 1.5px);
+  background-size: 10px 10px;
+}
+
+.halftone-red {
+  background-image: radial-gradient(circle, #E8232A 1.5px, transparent 1.5px);
+  background-size: 8px 8px;
+}
+
+/* ============================================================
+   SUNBURST / STARBURST PATTERN
+   ============================================================ */
+
+.sunburst {
+  background-image:
+    repeating-conic-gradient(
+      from 0deg,
+      var(--color-rm-yellow) 0deg 10deg,
+      var(--color-rm-yellow-light) 10deg 20deg
+    );
+}
+
+.sunburst-red {
+  background-image:
+    repeating-conic-gradient(
+      from 0deg,
+      #E8232A 0deg 10deg,
+      #FF6B6E 10deg 20deg
+    );
+}
+
+.sunburst-blue {
+  background-image:
+    repeating-conic-gradient(
+      from 0deg,
+      #1B3FBE 0deg 10deg,
+      #4A6FE3 10deg 20deg
+    );
+}
+
+/* ============================================================
+   COMIC TYPOGRAPHY UTILITIES
+   ============================================================ */
+
+.font-comic {
+  font-family: var(--font-comic);
+  letter-spacing: 0.04em;
+}
+
+.text-outline {
+  -webkit-text-stroke: 2px #0A0A0A;
+  paint-order: stroke fill;
+}
+
+.text-outline-sm {
+  -webkit-text-stroke: 1px #0A0A0A;
+  paint-order: stroke fill;
+}
+
+/* ============================================================
+   COMIC PANEL UTILITIES
+   ============================================================ */
+
+.panel {
+  border: var(--border-comic);
+  box-shadow: var(--shadow-panel);
+}
+
+.panel-thick {
+  border: var(--border-comic-thick);
+  box-shadow: var(--shadow-panel-lg);
+}
+
+.panel-hero {
+  border: var(--border-comic-thick);
+  box-shadow: var(--shadow-hero);
+}
+
+/* ============================================================
+   SPEECH BUBBLE
+   ============================================================ */
+
+.speech-bubble {
+  position: relative;
+  background: white;
+  border: var(--border-comic-thick);
+  border-radius: 50%;
+  padding: 1rem 1.5rem;
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -22px;
+  left: 40px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 22px solid #0A0A0A;
+}
+
+.speech-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 43px;
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 18px solid white;
+  z-index: 1;
+}
+
+/* ============================================================
+   EXPLOSION / BURST SHAPE
+   ============================================================ */
+
+.burst {
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%, 68% 57%,
+    79% 91%, 50% 70%, 21% 91%, 32% 57%,
+    2% 35%, 39% 35%
+  );
+}
+
+/* ============================================================
+   ACTION WORD BADGE
+   ============================================================ */
+
+.action-badge {
+  display: inline-block;
+  font-family: var(--font-comic);
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  background-color: var(--color-rm-yellow);
+  color: var(--color-rm-black);
+  border: 3px solid var(--color-rm-black);
+  box-shadow: 3px 3px 0px var(--color-rm-black);
+  padding: 0.1em 0.6em;
+  transform: rotate(-2deg);
+  line-height: 1.2;
+}
+
+.action-badge-red {
+  background-color: var(--color-rm-red);
+  color: white;
+  -webkit-text-stroke: 0.5px white;
+  transform: rotate(1.5deg);
+}
+
+.action-badge-blue {
+  background-color: var(--color-rm-blue);
+  color: white;
+  transform: rotate(-1deg);
+}
+
+/* ============================================================
+   BUTTON STYLES
+   ============================================================ */
+
+.btn-comic {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-comic);
+  font-size: 1.2rem;
+  letter-spacing: 0.06em;
+  padding: 0.6em 1.6em;
+  border: 3px solid var(--color-rm-black);
+  box-shadow: 4px 4px 0px var(--color-rm-black);
+  cursor: pointer;
+  transition: transform 80ms ease, box-shadow 80ms ease;
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.btn-comic:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--color-rm-black);
+}
+
+.btn-comic:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+.btn-primary {
+  background-color: var(--color-rm-yellow);
+  color: var(--color-rm-black);
+}
+
+.btn-secondary {
+  background-color: var(--color-rm-blue);
+  color: white;
+}
+
+.btn-danger {
+  background-color: var(--color-rm-red);
+  color: white;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-rm-black);
+}
+
+/* ============================================================
+   SECTION DIVIDER
+   ============================================================ */
+
+.zigzag-divider {
+  height: 16px;
+  background:
+    linear-gradient(135deg, var(--color-rm-yellow) 25%, transparent 25%) -10px 0,
+    linear-gradient(225deg, var(--color-rm-yellow) 25%, transparent 25%) -10px 0,
+    linear-gradient(315deg, var(--color-rm-yellow) 25%, transparent 25%),
+    linear-gradient(45deg, var(--color-rm-yellow) 25%, transparent 25%);
+  background-size: 20px 20px;
+  background-color: var(--color-rm-black);
+  border-top: 3px solid var(--color-rm-black);
+  border-bottom: 3px solid var(--color-rm-black);
+}
