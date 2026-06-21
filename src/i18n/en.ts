@@ -45,7 +45,7 @@ export const en = {
     stats: [
       { value: '100%', label: 'Internationally deployable' },
       { value: 'A–Z', label: 'Complete project planning' },
-      { value: '★★★', label: 'Quality first' },
+      { value: '★★★★★', label: 'Quality first' },
     ],
     checklistTitle: 'OUR APPROACH',
     qualities: [

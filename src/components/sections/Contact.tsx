@@ -32,11 +32,29 @@ export function Contact() {
 
         <div className="grid lg:grid-cols-5 gap-0 border-4 border-rm-yellow" style={{ boxShadow: '8px 8px 0px #FFD600' }}>
           <div className="lg:col-span-2 bg-rm-yellow border-r-4 border-rm-black p-8 flex flex-col gap-6">
+            <div className="relative self-start">
+              <div className="w-28 h-28 border-4 border-rm-black overflow-hidden" style={{ boxShadow: '5px 5px 0px #0A0A0A', transform: 'rotate(-2deg)' }}>
+                <img
+                  src="/images/mike_comic.png"
+                  alt="Mike F. Muller – Rackmasters"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div className="absolute -bottom-3 -right-3">
+                <ActionWord word="HI!" color="blue" rotate={5} className="text-base" />
+              </div>
+            </div>
+
+            <div>
+              <p className="font-comic text-rm-black text-xl leading-tight">Mike F. Muller</p>
+              <p className="font-sans text-rm-black text-sm opacity-70">Founder – Rackmasters</p>
+            </div>
+
             <h3 className="font-comic text-2xl text-rm-black">{c.infoTitle}</h3>
             <div className="space-y-4">
               {[
-                { icon: Mail, label: c.emailLabel, value: 'info@rackmasters.nl' },
-                { icon: Phone, label: c.phoneLabel, value: c.phoneValue },
+                { icon: Mail, label: c.emailLabel, value: 'Mike@rackmasters.nl' },
+                { icon: Phone, label: c.phoneLabel, value: '+31 (0)6 36378460' },
                 { icon: MapPin, label: c.locationLabel, value: c.locationValue },
               ].map(({ icon: Icon, label, value }) => (
                 <div key={label} className="flex items-start gap-3">

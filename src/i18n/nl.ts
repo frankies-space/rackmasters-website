@@ -45,7 +45,7 @@ export const nl = {
     stats: [
       { value: '100%', label: 'Internationaal inzetbaar' },
       { value: 'A–Z', label: 'Complete projectplanning' },
-      { value: '★★★', label: 'Kwaliteit voorop' },
+      { value: '★★★★★', label: 'Kwaliteit voorop' },
     ],
     checklistTitle: 'ONZE AANPAK',
     qualities: [

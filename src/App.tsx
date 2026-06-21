@@ -4,6 +4,7 @@ import { Footer } from '@/components/layout/Footer'
 import { Hero } from '@/components/sections/Hero'
 import { Services } from '@/components/sections/Services'
 import { About } from '@/components/sections/About'
+import { ComicShowcase } from '@/components/sections/ComicShowcase'
 import { MissionVision } from '@/components/sections/MissionVision'
 import { Approach } from '@/components/sections/Approach'
 import { Clients } from '@/components/sections/Clients'
@@ -18,6 +19,7 @@ export default function App() {
           <Hero />
           <Services />
           <About />
+          <ComicShowcase />
           <MissionVision />
           <Approach />
           <Clients />

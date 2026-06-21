@@ -8,6 +8,12 @@ const stepColors = [
   { bg: 'bg-rm-black',  actionColor: 'yellow' as const, textColor: 'text-rm-white', descColor: 'text-rm-gray-light' },
 ]
 const stepNumbers = ['01', '02', '03', '04']
+const stepImages = [
+  { src: '/images/comic/approach_planner_man.png', alt: 'Planning and assessment' },
+  { src: '/images/comic/config_blackman_monitors.png', alt: 'System design and configuration' },
+  { src: '/images/comic/teamwork_trio.png', alt: 'Implementation team' },
+  { src: '/images/comic/teamwork_highfive.png', alt: 'Successful delivery' },
+]
 
 export function Approach() {
   const { t } = useLanguage()
@@ -23,30 +29,40 @@ export function Approach() {
           <div className="w-24 h-1.5 bg-rm-red mx-auto mt-4 border border-rm-black" />
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-0 border-4 border-rm-black" style={{ boxShadow: '8px 8px 0px #0A0A0A' }}>
-          {ap.steps.map((step, i) => {
-            const c = stepColors[i]
-            return (
-              <div key={i} className={`${c.bg} p-6 relative border-r-2 border-rm-black last:border-r-0 flex flex-col gap-4`}>
-                <span className="font-comic text-8xl leading-none opacity-10 absolute top-2 right-3 select-none" style={{ color: i % 2 === 0 ? '#0A0A0A' : '#FAFAFA' }}>
-                  {stepNumbers[i]}
-                </span>
-                <div className="self-start">
-                  <ActionWord word={step.action} color={c.actionColor} />
-                </div>
-                <div className="w-10 h-10 bg-rm-white border-2 border-rm-black flex items-center justify-center" style={{ boxShadow: '2px 2px 0px #0A0A0A' }}>
-                  <span className="font-comic text-rm-black text-lg leading-none">{stepNumbers[i]}</span>
-                </div>
-                <h3 className={`font-comic text-xl leading-tight relative z-10 ${c.textColor}`}>{step.title}</h3>
-                <p className={`text-sm leading-relaxed relative z-10 ${c.descColor}`} style={{ fontFamily: 'Inter, sans-serif' }}>{step.description}</p>
-                {i < 3 && (
-                  <div className="hidden lg:block absolute -right-5 top-1/2 -translate-y-1/2 z-20">
-                    <div className="w-10 h-10 bg-rm-yellow border-2 border-rm-black flex items-center justify-center font-comic text-rm-black text-lg" style={{ boxShadow: '2px 2px 0px #0A0A0A' }}>→</div>
+        <div className="relative">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-0 border-4 border-rm-black" style={{ boxShadow: '8px 8px 0px #0A0A0A' }}>
+            {ap.steps.map((step, i) => {
+              const c = stepColors[i]
+              return (
+                <div key={i} className={`${c.bg} p-6 pb-0 relative border-r-2 border-rm-black last:border-r-0 flex flex-col gap-4 overflow-hidden`}>
+                  <span className="font-comic text-8xl leading-none absolute top-2 right-3 select-none" style={{ opacity: 0.22, color: i % 2 === 0 ? '#0A0A0A' : '#FAFAFA' }}>
+                    {stepNumbers[i]}
+                  </span>
+                  <div className="self-start">
+                    <ActionWord word={step.action} color={c.actionColor} />
                   </div>
-                )}
-              </div>
-            )
-          })}
+                  <h3 className={`font-comic text-xl leading-tight relative z-10 ${c.textColor}`}>{step.title}</h3>
+                  <p className={`text-sm leading-relaxed relative z-10 ${c.descColor}`} style={{ fontFamily: 'Inter, sans-serif' }}>{step.description}</p>
+                  <img
+                    src={stepImages[i].src}
+                    alt={stepImages[i].alt}
+                    className="w-full mt-auto object-contain object-bottom block"
+                    style={{ maxHeight: '200px' }}
+                  />
+                </div>
+              )
+            })}
+          </div>
+          {/* Arrows rendered outside overflow-hidden cards */}
+          {[1, 2, 3].map(i => (
+            <div
+              key={i}
+              className="hidden lg:block absolute z-10"
+              style={{ left: `${(i / 4) * 100}%`, top: '50%', transform: 'translate(-50%, -50%)' }}
+            >
+              <div className="w-10 h-10 bg-rm-yellow border-2 border-rm-black flex items-center justify-center font-comic text-rm-black text-lg" style={{ boxShadow: '2px 2px 0px #0A0A0A' }}>→</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

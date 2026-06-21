@@ -9,6 +9,11 @@ const colors = [
   { bg: 'bg-rm-red', textColor: 'text-rm-white', accentColor: 'text-rm-yellow', actionColor: 'blue' as const },
 ]
 const bottomAccents = ['bg-rm-yellow', 'bg-rm-red', 'bg-rm-blue']
+const serviceImages = [
+  { src: '/images/comic/hero_man_racking.png', alt: 'Server racking specialist' },
+  { src: '/images/comic/vision_global.png', alt: 'Global network infrastructure' },
+  { src: '/images/comic/hero_man_cabling.png', alt: 'Cabling expert' },
+]
 
 export function Services() {
   const { t } = useLanguage()
@@ -45,6 +50,12 @@ export function Services() {
                     <span key={tag} className="font-comic text-xs bg-rm-black text-rm-yellow px-2 py-0.5 border border-rm-black">{tag}</span>
                   ))}
                 </div>
+                <img
+                  src={serviceImages[i].src}
+                  alt={serviceImages[i].alt}
+                  className="w-full mt-auto object-contain"
+                  style={{ maxHeight: '160px' }}
+                />
                 <div className={`absolute bottom-0 left-0 right-0 h-1 ${bottomAccents[i]}`} />
               </div>
             )

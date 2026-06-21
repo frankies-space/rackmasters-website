@@ -1,4 +1,4 @@
-import { ArrowRight, Globe, Star } from 'lucide-react'
+import { ArrowRight, Star } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { ActionWord } from '@/components/ui/ComicPanel'
 import { useLanguage } from '@/context/LanguageContext'
@@ -55,14 +55,13 @@ export function Hero() {
           </div>
 
           <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-md panel-hero bg-rm-white" style={{ aspectRatio: '4/3' }}>
-              <div className="absolute inset-0 bg-rm-offwhite flex flex-col items-center justify-center gap-4">
-                <div className="halftone absolute inset-0 opacity-10" />
-                <Globe className="w-16 h-16 text-rm-blue relative z-10" />
-                <div className="relative z-10 text-center">
-                  <p className="font-comic text-3xl text-rm-blue">{h.imagePlaceholder}</p>
-                  <p className="font-sans text-rm-gray text-sm mt-1">{h.imageSub}</p>
-                </div>
+            <div className="relative w-full max-w-lg" style={{ aspectRatio: '4/3' }}>
+              <div className="absolute inset-0 overflow-hidden">
+                <img
+                  src="/images/comic/hero_team_diverse2.png"
+                  alt="Diverse IT superhero team"
+                  className="absolute inset-0 w-full h-full object-contain object-bottom"
+                />
               </div>
               <div className="absolute -top-4 -left-4 bg-rm-red border-2 border-rm-black px-3 py-1 z-10" style={{ boxShadow: '2px 2px 0px #0A0A0A' }}>
                 <span className="font-comic text-white text-sm">{h.panelLabel}</span>
