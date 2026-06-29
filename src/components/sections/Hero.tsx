@@ -60,6 +60,7 @@ export function Hero() {
                 <img
                   src="/images/comic/hero_team_diverse2.webp"
                   alt="Diverse IT superhero team"
+                  loading="eager"
                   className="absolute inset-0 w-full h-full object-contain object-bottom"
                 />
               </div>
