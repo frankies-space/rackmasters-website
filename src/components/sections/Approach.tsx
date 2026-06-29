@@ -9,10 +9,10 @@ const stepColors = [
 ]
 const stepNumbers = ['01', '02', '03', '04']
 const stepImages = [
-  { src: '/images/comic/approach_planner_man.png', alt: 'Planning and assessment' },
-  { src: '/images/comic/config_blackman_monitors.png', alt: 'System design and configuration' },
-  { src: '/images/comic/teamwork_trio.png', alt: 'Implementation team' },
-  { src: '/images/comic/teamwork_highfive.png', alt: 'Successful delivery' },
+  { src: '/images/comic/approach_planner_man.webp', alt: 'Planning and assessment' },
+  { src: '/images/comic/config_blackman_monitors.webp', alt: 'System design and configuration' },
+  { src: '/images/comic/teamwork_trio.webp', alt: 'Implementation team' },
+  { src: '/images/comic/teamwork_highfive.webp', alt: 'Successful delivery' },
 ]
 
 export function Approach() {

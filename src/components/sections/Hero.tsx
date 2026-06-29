@@ -58,7 +58,7 @@ export function Hero() {
             <div className="relative w-full max-w-lg" style={{ aspectRatio: '4/3' }}>
               <div className="absolute inset-0 overflow-hidden">
                 <img
-                  src="/images/comic/hero_team_diverse2.png"
+                  src="/images/comic/hero_team_diverse2.webp"
                   alt="Diverse IT superhero team"
                   className="absolute inset-0 w-full h-full object-contain object-bottom"
                 />

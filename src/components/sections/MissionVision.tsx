@@ -37,7 +37,7 @@ export function MissionVision() {
               <blockquote className="mt-6 border-l-4 border-rm-yellow pl-4 font-comic text-rm-yellow text-lg italic">{m.missionQuote}</blockquote>
             </div>
             <img
-              src="/images/comic/mission_cables.png"
+              src="/images/comic/mission_cables.webp"
               alt="Precision cable work"
               className="mt-auto w-full object-contain object-bottom"
               style={{ maxHeight: '208px' }}
@@ -61,7 +61,7 @@ export function MissionVision() {
               <blockquote className="mt-6 border-l-4 border-rm-black pl-4 font-comic text-rm-black text-lg italic">{m.visionQuote}</blockquote>
             </div>
             <img
-              src="/images/comic/vision_woman_global.png"
+              src="/images/comic/vision_woman_global.webp"
               alt="Global network vision"
               className="mt-auto w-full object-contain object-bottom"
               style={{ maxHeight: '208px' }}

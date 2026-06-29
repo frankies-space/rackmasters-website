@@ -10,9 +10,9 @@ const colors = [
 ]
 const bottomAccents = ['bg-rm-yellow', 'bg-rm-red', 'bg-rm-blue']
 const serviceImages = [
-  { src: '/images/comic/hero_man_racking.png', alt: 'Server racking specialist' },
-  { src: '/images/comic/vision_global.png', alt: 'Global network infrastructure' },
-  { src: '/images/comic/hero_man_cabling.png', alt: 'Cabling expert' },
+  { src: '/images/comic/hero_man_racking.webp', alt: 'Server racking specialist' },
+  { src: '/images/comic/vision_global.webp', alt: 'Global network infrastructure' },
+  { src: '/images/comic/hero_man_cabling.webp', alt: 'Cabling expert' },
 ]
 
 export function Services() {
@@ -45,9 +45,9 @@ export function Services() {
                 </div>
                 <h3 className={`font-comic text-2xl leading-tight ${c.accentColor}`}>{service.title}</h3>
                 <p className="text-sm leading-relaxed opacity-90 flex-1" style={{ fontFamily: 'Inter, sans-serif' }}>{service.description}</p>
-                <div className="flex flex-wrap gap-2 mt-auto">
+                <div className="flex flex-wrap gap-3 mt-auto">
                   {service.tags.map((tag) => (
-                    <span key={tag} className="font-comic text-xs bg-rm-black text-rm-yellow px-2 py-0.5 border border-rm-black">{tag}</span>
+                    <span key={tag} className="font-comic text-xs bg-rm-black text-rm-yellow px-3 py-1 border border-rm-black">{tag}</span>
                   ))}
                 </div>
                 <img

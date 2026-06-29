@@ -14,7 +14,7 @@ export function About() {
         <div className="mb-16 border-4 border-rm-yellow bg-rm-black flex flex-col sm:flex-row overflow-hidden" style={{ boxShadow: '8px 8px 0px #FFD600' }}>
           <div className="relative sm:w-48 shrink-0 bg-transparent">
             <img
-              src="/images/mike_comic.png"
+              src="/images/mike_comic.webp"
               alt="Mike F. Muller – Founder Rackmasters"
               className="w-full h-full object-contain object-bottom sm:h-56"
               style={{ display: 'block' }}
@@ -46,7 +46,7 @@ export function About() {
             <div className="mt-8 relative">
               <div className="relative overflow-hidden rounded-none" style={{ aspectRatio: '16/7' }}>
                 <img
-                  src="/images/comic/datacenter_scene1.png"
+                  src="/images/comic/datacenter_scene1.webp"
                   alt="IT engineers in datacenter"
                   className="absolute inset-0 w-full h-full object-cover object-center"
                 />
@@ -60,15 +60,17 @@ export function About() {
           <div className="space-y-8">
             <div className="relative overflow-hidden" style={{ aspectRatio: '16/7' }}>
               <img
-                src="/images/comic/about_team1.png"
+                src="/images/comic/about_team1.webp"
                 alt="Diverse IT team collaboration"
                 className="absolute inset-0 w-full h-full object-contain object-center"
               />
             </div>
             <div className="grid grid-cols-3 gap-0 border-2 border-rm-yellow" style={{ boxShadow: '5px 5px 0px #FFD600' }}>
               {a.stats.map((stat, i) => (
-                <div key={i} className="border-r-2 border-rm-yellow last:border-r-0 p-5 text-center">
-                  <p className={`font-comic text-3xl leading-none ${i === 0 ? 'text-rm-yellow' : i === 1 ? 'text-rm-red' : 'text-rm-blue'}`}>{stat.value}</p>
+                <div key={i} className="border-r-2 border-rm-yellow last:border-r-0 p-3 sm:p-5 text-center flex flex-col items-center">
+                  <div className="flex items-center justify-center h-10">
+                    <p className={`font-comic leading-none ${i === 2 ? 'text-base sm:text-xl' : 'text-3xl'} ${i === 0 ? 'text-rm-yellow' : i === 1 ? 'text-rm-red' : 'text-rm-blue'}`}>{stat.value}</p>
+                  </div>
                   <p className="font-sans text-xs text-rm-gray-light mt-1 leading-tight">{stat.label}</p>
                 </div>
               ))}

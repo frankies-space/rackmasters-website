@@ -35,7 +35,7 @@ export function Contact() {
             <div className="relative self-start">
               <div className="w-28 h-28 border-4 border-rm-black overflow-hidden" style={{ boxShadow: '5px 5px 0px #0A0A0A', transform: 'rotate(-2deg)' }}>
                 <img
-                  src="/images/mike_comic.png"
+                  src="/images/mike_comic.webp"
                   alt="Mike F. Muller – Rackmasters"
                   className="w-full h-full object-cover object-top"
                 />

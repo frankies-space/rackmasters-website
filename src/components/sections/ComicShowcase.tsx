@@ -1,12 +1,12 @@
 import { ActionWord } from '@/components/ui/ComicPanel'
 
 const showcaseImages = [
-  { src: '/images/comic/hero_woman_cables.png', alt: 'Superhero with network cables', label: 'ZAP!' as const },
-  { src: '/images/comic/config_blackman_happy.png', alt: 'Network configuration success', label: 'YES!' as const },
-  { src: '/images/comic/inside_server_man_happy.png', alt: 'Server hardware expert', label: 'POW!' as const },
-  { src: '/images/comic/hero_blackwoman_racking.png', alt: 'Racking specialist superhero', label: 'RACK!' as const },
-  { src: '/images/comic/fiber_man_happy.png', alt: 'Fiber optic cable laying', label: 'ZOOM!' as const },
-  { src: '/images/comic/hero_duo_cabling.png', alt: 'Duo cabling team', label: 'SNAP!' as const },
+  { src: '/images/comic/hero_woman_cables.webp', alt: 'Superhero with network cables', label: 'ZAP!' as const },
+  { src: '/images/comic/config_blackman_happy.webp', alt: 'Network configuration success', label: 'YES!' as const },
+  { src: '/images/comic/inside_server_man_happy.webp', alt: 'Server hardware expert', label: 'POW!' as const },
+  { src: '/images/comic/hero_blackwoman_racking.webp', alt: 'Racking specialist superhero', label: 'RACK!' as const },
+  { src: '/images/comic/fiber_man_happy.webp', alt: 'Fiber optic cable laying', label: 'ZOOM!' as const },
+  { src: '/images/comic/hero_duo_cabling.webp', alt: 'Duo cabling team', label: 'SNAP!' as const },
 ]
 
 const actionColors: Array<'yellow' | 'red' | 'blue'> = ['yellow', 'red', 'blue', 'yellow', 'red', 'blue']
